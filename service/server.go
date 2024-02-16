@@ -7,13 +7,13 @@ import (
 
 // 获取版本
 func GetVersion() {
-	tools.Info("TLog Version 0.1.0 Feb 15, 2024")
+	tools.Info("TLog Version 0.0.1 Feb 16, 2024")
 	tools.Info("Creator: Noah Jones")
 }
 
 // 获取帮助
 func GetHelp() {
-	tools.Warn("open-log Version 0.1.0 Feb 15, 2024")
+	tools.Warn("open-log Version 0.0.1 Feb 16, 2024")
 	tools.Info("open-log [-h|-v|-r|-f] file1 file2 file3 ...")
 	tools.Warn("Amenity")
 	tools.Info("    Enter the file you want to open-logete directly")
