@@ -3,6 +3,7 @@ package main
 import (
 	"open-log/service"
 	"open-log/tools"
+	"open-log/tools/comm"
 	"os"
 	"strings"
 )
@@ -15,7 +16,7 @@ func main() {
 		return
 	}
 	// 系统初始化
-	// service.InitRootWorkSpace(service.GetConfigPath())
+	comm.InitRootWorkSpace("open-log")
 
 	if !strings.HasPrefix(os.Args[1], "-") {
 		service.Run("", os.Args[1:])
