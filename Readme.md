@@ -1,4 +1,4 @@
-# Aine Linux Tools - open-logete
+# Aine Linux Tools - alogete
 
 > Version 0.0.1 (2024-02-16 Release)
 >
@@ -7,7 +7,7 @@
 
 ## 简介
 
-open-log (open-log) 隶属于 aine-linux-tools 中的一部分，是一个简单的日志聚合工具，可以将多个程序、文件以及网络的日志集合输出
+alog (alog) 隶属于 aine-linux-tools 中的一部分，是一个简单的日志聚合工具，可以将多个程序、文件以及网络的日志集合输出
 
 ## 安装
 
@@ -19,8 +19,6 @@ open-log (open-log) 隶属于 aine-linux-tools 中的一部分，是一个简单
 
 ```bash
 # 聚合查看指定的日志
-open-log a.log b.log c.log
+alog a.log b.log c.log
 
-# 查看所有正在运行的任务
-open-log -l
 ```

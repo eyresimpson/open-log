@@ -1,9 +1,9 @@
 package main
 
 import (
-	"open-log/service"
-	"open-log/tools"
-	"open-log/tools/comm"
+	"alog/service"
+	"alog/tools/comm"
+	"alog/tools/logger"
 	"os"
 	"strings"
 )
@@ -11,12 +11,12 @@ import (
 // 主入口函数
 func main() {
 	if len(os.Args) < 2 {
-		tools.Err("alt-open-log: Missing parameters/Incorrect number of parameters passed", nil)
+		logger.Err("alt-alog: Missing parameters/Incorrect number of parameters passed", nil)
 		service.GetHelp()
 		return
 	}
 	// 系统初始化
-	comm.InitRootWorkSpace("open-log")
+	comm.InitRootWorkSpace("alog")
 
 	if !strings.HasPrefix(os.Args[1], "-") {
 		service.Run("", os.Args[1:])

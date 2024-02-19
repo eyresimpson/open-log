@@ -1,6 +1,7 @@
 package tools
 
 import (
+	"alog/tools/logger"
 	"io/ioutil"
 	"os"
 )
@@ -47,6 +48,6 @@ func IsFile(path string) bool {
 func WriteFile(content string, filePath string) {
 	err := ioutil.WriteFile(filePath, []byte(content), 0644)
 	if err != nil {
-		Err("Error writing to file: ", err)
+		logger.Err("Error writing to file: ", err)
 	}
 }

@@ -1,4 +1,4 @@
-module open-log
+module alog
 
 go 1.21
 

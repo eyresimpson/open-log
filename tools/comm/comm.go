@@ -1,7 +1,7 @@
 package comm
 
 import (
-	"open-log/tools"
+	"alog/tools"
 	"os"
 	"path"
 )

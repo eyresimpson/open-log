@@ -6,6 +6,7 @@ import (
 	"os/exec"
 	"os/user"
 	"path/filepath"
+	"runtime"
 )
 
 func RunExe(exe string, args ...string) error {
@@ -41,4 +42,9 @@ func GetCurrentDirectory() string {
 func GetCurrentUserRootDirectory() string {
 	u, _ := user.Current()
 	return u.HomeDir
+}
+
+// 判断当前操作系统是否为 MS Windows
+func IsWindows() bool {
+	return runtime.GOOS == "windows"
 }

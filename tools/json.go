@@ -1,6 +1,7 @@
 package tools
 
 import (
+	"alog/tools/logger"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -42,21 +43,21 @@ func ReadJsonArray(filePath string) []map[string]string {
 	// 读取文件中的JSON数据
 	jsonFile, err := os.OpenFile(filePath, os.O_RDWR, 0644)
 	if err != nil {
-		Err("Cannot opening file ! ", err)
+		logger.Err("Cannot opening file ! ", err)
 		return nil
 	}
 	defer jsonFile.Close() // 确保文件句柄在函数执行结束时被关闭
 
 	byteValue, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
-		Err("Error reading file:", err)
+		logger.Err("Error reading file:", err)
 		return nil
 	}
 
 	// 解析JSON数据
 	var data []map[string]string
 	if err := json.Unmarshal(byteValue, &data); err != nil {
-		Err("Error unmarshalling JSON:", err)
+		logger.Err("Error unmarshalling JSON:", err)
 		return nil
 	}
 	return data
@@ -72,13 +73,13 @@ func InsertObjectToJsonArray(filePath string, newData map[string]string) {
 	// 将修改后的JSON数据重新编码为JSON格式
 	encodedData, err := json.MarshalIndent(data, "", "    ")
 	if err != nil {
-		Err("Error encoding JSON:", err)
+		logger.Err("Error encoding JSON:", err)
 		return
 	}
 
 	// 将修改后的JSON数据写回到文件中
 	if err := ioutil.WriteFile(filePath, encodedData, 0644); err != nil {
-		Err("Error writing to file:", err)
+		logger.Err("Error writing to file:", err)
 		return
 	}
 
@@ -101,13 +102,13 @@ func RemoveObjectFromJsonArray(filePath string, id string) {
 	// 将修改后的JSON数据重新编码为JSON格式
 	encodedData, err := json.MarshalIndent(data, "", "    ")
 	if err != nil {
-		Err("Error encoding JSON:", err)
+		logger.Err("Error encoding JSON:", err)
 		return
 	}
 
 	// 将修改后的JSON数据写回到文件中
 	if err := ioutil.WriteFile(filePath, encodedData, 0644); err != nil {
-		Err("Error writing to file:", err)
+		logger.Err("Error writing to file:", err)
 		return
 	}
 
